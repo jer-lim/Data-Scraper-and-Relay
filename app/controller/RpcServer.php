@@ -27,7 +27,11 @@ class RpcServer {
 		}
 	}
 
-	private function doSomething($v1, $v2){
-		return "Hello!" . $v1 . $v2;
+	private function multiGet($input, $curlOptions){
+		$curler = new Curler();
+		foreach($input as $in){
+			$curler->addGet($in['url'], $in['options'], $curlOptions);
+		}
+		return $curler->execute();
 	}
 }
