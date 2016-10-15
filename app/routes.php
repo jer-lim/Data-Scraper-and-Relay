@@ -1,4 +1,4 @@
 <?php
 
 Route::get("/", "IndexController::showPage");
-Route::post("/rpc/{name}", "RpcController::handleRequest");
+Route::get("/rpc/{name}", "RpcController::handleRequest");
