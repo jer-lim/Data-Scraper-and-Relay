@@ -31,6 +31,10 @@ class RpcServer {
 		}
 	}
 
+	private function hello(){
+		return "Hello!";
+	}
+
 	private function multiGet($input, $curlOptions = array()){
 		$curler = new Curler();
 		foreach($input as $in){
