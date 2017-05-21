@@ -9,7 +9,7 @@ class RpcClient {
 	var $mh;
 
 	function __construct(string $s, string $ck){
-		$this->server = "http://" . $s . "/rpc/";
+		$this->server = "https://" . $s . "/rpc/";
 		$this->clientKey = $ck;
 		$this->mh = curl_multi_init();
 	}
@@ -28,7 +28,7 @@ class RpcClient {
 	}
 
 	public function add($server, $method, $urls, $options){
-		$url = "http://" . $server . "/rpc/" . $method;
+		$url = "https://" . $server . "/rpc/" . $method;
 		$this->addCurlGet($url, array("key" => $this->clientKey, "args" => serialize(array($urls, $options))));
 	}
 
